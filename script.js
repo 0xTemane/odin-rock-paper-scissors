@@ -36,7 +36,7 @@ function playRound(humanChoice, computerChoice) {
         console.log(`You lose! ${humanChoice} vs ${computerChoice}.`);
         computerScore++;
         console.log(`Human: ${humanScore} | Computer: ${computerScore}`);
-    }  else if (computerChoice == "scissors" && humanChoice == "rock"){
+    }  else if (computerChoice == "scissors" && humanChoice == "paper"){
         console.log(`You lose! ${humanChoice} vs ${computerChoice}.`);
         computerScore++;
         console.log(`Human: ${humanScore} | Computer: ${computerScore}`);
