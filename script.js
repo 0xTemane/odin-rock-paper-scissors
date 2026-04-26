@@ -1,5 +1,7 @@
 console.log("External Javascript works.");
 const choices = ["rock","paper","scissors"];
+let humanScore = 0;
+let computerScore = 0;
 
 function getComputerChoice() {
     let x = Math.random() * 2;
