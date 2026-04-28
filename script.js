@@ -16,27 +16,27 @@ function playGame(){
         if (humanChoice === computerChoice){
             console.log(`It's a tie: ${humanChoice} vs ${computerChoice}.`);
             console.log(`Human: ${humanScore} | Computer: ${computerScore}`);
-        } else if (humanChoice == "rock" && computerChoice == "scissors"){
+        } else if (humanChoice === "rock" && computerChoice === "scissors"){
             console.log(`You won! ${humanChoice} vs ${computerChoice}.`);
             humanScore++;
             console.log(`Human: ${humanScore} | Computer: ${computerScore}`);
-        } else if (humanChoice == "paper" && computerChoice == "rock"){
+        } else if (humanChoice === "paper" && computerChoice === "rock"){
             console.log(`You won! ${humanChoice} vs ${computerChoice}.`);
             humanScore++;
             console.log(`Human: ${humanScore} | Computer: ${computerScore}`);
-        } else if (humanChoice == "scissors" && computerChoice == "paper"){
+        } else if (humanChoice === "scissors" && computerChoice === "paper"){
             console.log(`You won! ${humanChoice} vs ${computerChoice}.`);
             humanScore++;
             console.log(`Human: ${humanScore} | Computer: ${computerScore}`);
-        } else if (computerChoice == "rock" && humanChoice == "scissors"){
+        } else if (computerChoice === "rock" && humanChoice === "scissors"){
             console.log(`You lose! ${humanChoice} vs ${computerChoice}.`);
             computerScore++;
             console.log(`Human: ${humanScore} | Computer: ${computerScore}`);
-        } else if (computerChoice == "paper" && humanChoice == "rock"){
+        } else if (computerChoice === "paper" && humanChoice === "rock"){
             console.log(`You lose! ${humanChoice} vs ${computerChoice}.`);
             computerScore++;
             console.log(`Human: ${humanScore} | Computer: ${computerScore}`);
-        }  else if (computerChoice == "scissors" && humanChoice == "paper"){
+        }  else if (computerChoice === "scissors" && humanChoice === "paper"){
             console.log(`You lose! ${humanChoice} vs ${computerChoice}.`);
             computerScore++;
             console.log(`Human: ${humanScore} | Computer: ${computerScore}`);
