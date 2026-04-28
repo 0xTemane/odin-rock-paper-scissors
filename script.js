@@ -1,11 +1,11 @@
 console.log("External Javascript works.");
-const choices = ["rock","paper","scissors"];
+const CHOICES = ["rock","paper","scissors"];
 let humanScore = 0;
 let computerScore = 0;
 
 function getComputerChoice() {
     let x = Math.random() * 3;
-    return choices[Math.floor(x)];
+    return CHOICES[Math.floor(x)];
 }
 
 function getHumanChoice() {
