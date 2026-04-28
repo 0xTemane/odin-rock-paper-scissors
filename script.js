@@ -4,8 +4,8 @@ let humanScore = 0;
 let computerScore = 0;
 
 function getComputerChoice() {
-    let x = Math.random() * 2;
-    return choices[Math.round(x)];
+    let x = Math.random() * 3;
+    return choices[Math.floor(x)];
 }
 
 function getHumanChoice() {
