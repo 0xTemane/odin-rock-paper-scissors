@@ -11,6 +11,7 @@ function getComputerChoice() {
 function getHumanChoice() {
     return prompt("Your turn! Rock, Paper or Scissors?  ").toLowerCase();
 }
+
 function playGame(){
     function playRound(humanChoice, computerChoice) {
         if (humanChoice === computerChoice){
@@ -46,8 +47,10 @@ function playGame(){
             console.log(`Human: ${humanScore} | Computer: ${computerScore}`);
         }
     }
+
     for (let i=0; i < 5; i++) {
         playRound(getHumanChoice(),getComputerChoice());
     }
 }
+
 playGame();
