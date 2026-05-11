@@ -38,8 +38,3 @@ function playRound(humanChoice, computerChoice = getComputerChoice()) {
         console.log("SAME SCORE AS BEFORE")
     }
 }
-
-    for (let i=0; i < 5; i++) {
-        playRound(getHumanChoice(),getComputerChoice());
-        console.log(`Human: ${humanScore} | Computer: ${computerScore}`);
-    }
