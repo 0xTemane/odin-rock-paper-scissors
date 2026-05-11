@@ -3,13 +3,24 @@ const CHOICES = ["rock","paper","scissors"];
 let humanScore = 0;
 let computerScore = 0;
 
+const buttonContainer = document.querySelector(".button-container");
+buttonContainer.addEventListener("click", e => {
+    switch(e.target.id){
+        case "rock":
+            playRound("rock");
+            break;
+        case "paper":
+            playRound("paper");
+            break;
+        case "scissors":
+            playRound("scissors");
+            break;
+    }
+})
+
 function getComputerChoice() {
     let x = Math.random() * 3;
     return CHOICES[Math.floor(x)];
-}
-
-function getHumanChoice() {
-    return prompt("Your turn! Rock, Paper or Scissors?  ").toLowerCase();
 }
 
 function playRound(humanChoice, computerChoice = getComputerChoice()) {
