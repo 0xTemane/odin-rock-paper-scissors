@@ -3,8 +3,15 @@ const CHOICES = ["rock","paper","scissors"];
 let humanScore = 0;
 let computerScore = 0;
 
+const body = document.querySelector("body");
 const buttonContainer = document.querySelector(".button-container");
-buttonContainer.addEventListener("click", e => {
+buttonContainer.addEventListener("click", getHumanChoiceThenPlay);
+
+const displayRound = document.querySelector("p.display-round");
+const displayHumanScore = document.querySelector("span#display-human-score");
+const displayComputerScore = document.querySelector("span#display-computer-score");
+
+function getHumanChoiceThenPlay(e) {
     switch(e.target.id){
         case "rock":
             playRound("rock");
@@ -16,11 +23,7 @@ buttonContainer.addEventListener("click", e => {
             playRound("scissors");
             break;
     }
-})
-
-const displayRound = document.querySelector("p.display-round");
-const displayHumanScore = document.querySelector("span#display-human-score");
-const displayComputerScore = document.querySelector("span#display-computer-score");
+}
 
 function getComputerChoice() {
     return CHOICES[Math.floor(Math.random() * 3)];
@@ -52,4 +55,21 @@ function playRound(humanChoice, computerChoice = getComputerChoice()) {
     }
     displayHumanScore.textContent = humanScore;
     displayComputerScore.textContent = computerScore;
+    checkGameEnd();
+}
+
+function checkGameEnd() {
+    if (humanScore === 5){
+        buttonContainer.removeEventListener("click", getHumanChoiceThenPlay)
+        const winner = document.createElement("h3");
+        winner.style.color = "green";
+        winner.textContent = "You won - Congratulations big fella!";
+        body.appendChild(winner);
+    } else if (computerScore === 5) {
+        buttonContainer.removeEventListener("click", getHumanChoiceThenPlay)
+        const winner = document.createElement("h3");
+        winner.style.color = "red";
+        winner.textContent = "Computer won! - Sorry for you big fella...";
+        body.appendChild(winner);
+    }
 }
