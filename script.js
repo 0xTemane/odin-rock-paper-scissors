@@ -18,6 +18,10 @@ buttonContainer.addEventListener("click", e => {
     }
 })
 
+const displayRound = document.querySelector("p.display-round");
+const displayHumanScore = document.querySelector("span#display-human-score");
+const displayComputerScore = document.querySelector("span#display-computer-score");
+
 function getComputerChoice() {
     let x = Math.random() * 3;
     return CHOICES[Math.floor(x)];
@@ -25,27 +29,28 @@ function getComputerChoice() {
 
 function playRound(humanChoice, computerChoice = getComputerChoice()) {
     if (humanChoice === computerChoice){
-        console.log(`It's a tie: ${humanChoice} vs ${computerChoice}.`);
+        displayRound.textContent = `It's a tie: ${humanChoice} vs ${computerChoice}.`;
     } else if (humanChoice === "rock" && computerChoice === "scissors"){
-        console.log(`You won! ${humanChoice} vs ${computerChoice}.`);
+        displayRound.textContent = `You won! ${humanChoice} vs ${computerChoice}.`;
         humanScore++;
     } else if (humanChoice === "paper" && computerChoice === "rock"){
-        console.log(`You won! ${humanChoice} vs ${computerChoice}.`);
+        displayRound.textContent = `You won! ${humanChoice} vs ${computerChoice}.`;
         humanScore++;
     } else if (humanChoice === "scissors" && computerChoice === "paper"){
-        console.log(`You won! ${humanChoice} vs ${computerChoice}.`);
+        displayRound.textContent = `You won! ${humanChoice} vs ${computerChoice}.`;
         humanScore++;
     } else if (computerChoice === "rock" && humanChoice === "scissors"){
-        console.log(`You lose! ${humanChoice} vs ${computerChoice}.`);
+        displayRound.textContent = `You lose! ${humanChoice} vs ${computerChoice}.`;
         computerScore++;
     } else if (computerChoice === "paper" && humanChoice === "rock"){
-        console.log(`You lose! ${humanChoice} vs ${computerChoice}.`);
+        displayRound.textContent = `You lose! ${humanChoice} vs ${computerChoice}.`;
         computerScore++;
     }  else if (computerChoice === "scissors" && humanChoice === "paper"){
-        console.log(`You lose! ${humanChoice} vs ${computerChoice}.`);
+        displayRound.textContent = `You lose! ${humanChoice} vs ${computerChoice}.`;
         computerScore++;
     }  else {
-        console.log("Hold up! Wait a minute, your choice ain't right...");
-        console.log("SAME SCORE AS BEFORE")
+        displayRound.textContent = "Hold up! Wait a minute, you are trying to cheat...";
     }
+    displayHumanScore.textContent = humanScore;
+    displayComputerScore.textContent = computerScore;
 }
