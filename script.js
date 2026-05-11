@@ -23,8 +23,7 @@ const displayHumanScore = document.querySelector("span#display-human-score");
 const displayComputerScore = document.querySelector("span#display-computer-score");
 
 function getComputerChoice() {
-    let x = Math.random() * 3;
-    return CHOICES[Math.floor(x)];
+    return CHOICES[Math.floor(Math.random() * 3)];
 }
 
 function playRound(humanChoice, computerChoice = getComputerChoice()) {
